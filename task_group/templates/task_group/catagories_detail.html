@@ -1,0 +1,43 @@
+
+{% extends 'task_group/base.html' %}
+
+{% block heading %}
+{{catagories_detail.catagories_name}}
+{% endblock %}
+
+
+{% block content %}
+{%load static %}
+{% for task in catagories_detail.Task.all %}
+                <div class="items">
+
+                    <div class="subitem">
+
+
+                      {% if task.done %}
+                       <p class="listitem"><strike  >{{task.title}}</strike></p>
+                        {% else %}
+                        <p class="listitem">{{task.title}} </p>
+                        {% endif %}
+                        <a href="/task_update/{{task.pk}}"  class="update"><img src="{% static 'task_group/img/pencil.png' %}" ></a>
+                        <a href="/task_delete/{{task.pk}}" ><img src="{% static 'task_group/img/trash.png' %}"></a>
+
+                    </div>
+
+
+
+
+
+
+
+                </div>
+{% endfor %}
+            </div>
+
+
+{% endblock %}
+
+
+
+
+

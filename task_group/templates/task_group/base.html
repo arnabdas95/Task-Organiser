@@ -1,0 +1,101 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'task_group/css/new.css' %}" type="text/css">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <div class="base">
+
+        <div class="title">
+            <p class="title-text">Task Organiser</p>
+            <div class="home">
+                <a href="{% url 'task_group:tlist' %}" class="icon"><img src="{% static 'task_group/img/home.png' %}"></a>
+            </div>
+        </div>
+        <div class="context">
+            <div class="left">
+                <p class="left-heading">Motivation</p>
+
+                <div class="motivation">
+
+                    <p>“Those who plan do better than those who do not plan, even though they rarely stick to their plan.”<br> – Winston Churchill. </p>
+                </div>
+
+
+            </div>
+
+
+
+
+            <div class="tasklist">
+
+
+                <div class="left-heading">
+                    <p class="headingtext">{% block heading %} {% endblock%}</p>
+                </div>
+
+
+
+
+
+
+
+
+   {% block content %}
+            {% endblock %}
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="groups">
+
+                <p class="groups-heading">Task Groups</p>
+                <ul>
+                    <li><a href="/catagories_create/" ><img src="{% static 'task_group/img/plus.png' %}"></a>Add</li>
+                    {% for c in cat_list %}
+                    <li>
+                        <a href="/catagories_delete/{{c.pk}}" ><img src="{% static 'task_group/img/trash.png' %}"></a><a href="/details/{{c.pk}}" >{{c.catagories_name}}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+            </div>
+
+
+        </div>
+
+        <div class="footer">
+            <p>Developed by Arnab Das </p>
+        </div>
+
+    </div>
+</body>
+
+</html>

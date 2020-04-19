@@ -1,0 +1,20 @@
+{% extends 'task_group/base.html' %}
+
+{% block heading %}
+
+<p class="groups_haeading">Create new Group</p>
+{% endblock %}
+{% block content %}
+{%load static %}
+<form method="post">
+    <div class="formview">
+    {% csrf_token %}
+    {{form}}
+         <input type="submit" value="submit">
+
+    </div>
+
+
+
+</form>
+{% endblock %}

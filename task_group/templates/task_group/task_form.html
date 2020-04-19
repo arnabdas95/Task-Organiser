@@ -1,0 +1,29 @@
+
+{% extends 'task_group/base.html' %}
+
+{% block heading %}
+{% if form.instance.pk %}
+<p class="groups_haeading">Update Task</p>
+{% else %}
+<p class="groups_haeading">Create new Task</p>
+{% endif %}
+{% endblock %}
+
+
+{% block content %}
+{%load static %}
+<form method="post">
+    <div class="formview">
+    {% csrf_token %}
+    {{form}}
+         <input type="submit" value="submit">
+
+    </div>
+
+
+
+</form>
+{% endblock %}
+
+
+
