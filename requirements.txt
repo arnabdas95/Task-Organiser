@@ -2,7 +2,7 @@ altgraph==0.17
 asgiref==3.2.6
 astroid==2.1.0
 autopep8==1.4.3
-certifi==2018.11.29
+certifi==2022.12.7
 chardet==3.0.4
 colorama==0.4.3
 defusedxml==0.5.0
